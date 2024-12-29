@@ -1,0 +1,197 @@
+
+# What is React ?
+ React is a JavaScript library used for building user interfaces,
+Primmarily used for building single-page applications. It’s maintained by Facebook
+and It follows component-based architecture for building reusable UI component.
+
+# How does react works ?
+ React creates a virtual-DOM in memory.
+Insted of manipulating browsers DOM (Real-DOM) directly, React creates virtual-DOM in memory.
+Where it does all the nessessary manipulating, before making the changes in the browsers DOM (Real-DOM).
+
+# Why we use React js ?
+ The main objective of react is to develop UI that improve speed of the apps.
+It uses virtual-dom which improve performance of the app. Virtual-DOM is faster than Reacl-DOM.
+
+# What is a Single Page Application (SPA)?
+ A Single Page Application is a web application that loads a single HTML page and
+dynamically updates the content on the page as the user interacts with it, without 
+reloading the entire page.
+
+# What is JSX ?
+ React uses JSX (JavaScript XML) for defining the UI:
+JSX stands for JavaScript XML.
+JSX allows us to write HTML in JavaScript, 
+JSX makes it easier to write and add HTML in React.
+and place them in the DOM without using functions like appendChild() or createElement(). [Optional]
+Behind the scenes, JSX gets transpiled into JavaScript using tools like Babel.
+
+#  What are React Fragments?
+React Fragments are a feature in React that allows you to group a list of children without adding extra nodes to the DOM.
+To prevent unnecessorily adding extra nodes to the DOM.
+
+# What is the Virtual DOM ?
+ The Virtual DOM (VDOM) is a lightweight, in-memory representation of the actual DOM that React uses to optimize the rendering process. 
+Instead of directly manipulating the real DOM, React creates a virtual copy of the DOM, updates the virtual DOM when changes occur, 
+and then compares it to the previous version using a process called Reconciliation. 
+After identifying the differences, only the necessary updates are applied to the real DOM, which avoid unnecessary re-renders and improving performance.
+(A new virtual DOM is created after every rerender).
+
+# What is real DOM ?
+ The Real DOM is the actual Document Object Model, (a tree-structured representation of the UI elements in the browser). 
+The actual DOM provided by the browser. It directly represents the UI and is used to render content on the screen.
+Whenever the UI needs to be updated, the Real DOM is directly manipulated, which can be slow because it requires re-rendering the entire DOM,
+which can lead to performance issue.
+
+# Difference between Virtual and Real-DOM ?
+ It is the copy of the Real DOM which is use to manage updates efficiently.
+It allows React to manage updates more efficiently. When the state or props of a component change, 
+React first updates the Virtual DOM instead of the Real DOM. 
+It then uses a process called "reconciliation" to calculate the difference between the new Virtual DOM and the previous one. 
+Finally, React updates only the necessary parts of the Real DOM.
+This approach makes React faster because interacting with the Real DOM directly is expensive in terms of performance.
+
+[ Example Scenario ::
+ Imagine a list of 1000 items where only one item changes:
+ Virtual DOM : React updates the corresponding Virtual DOM node and compares it with the previous version. 
+ Only the specific Real DOM node for the changed item gets updated.
+ Real DOM : If updated directly, the entire list might re-render, leading to slower performance.]
+
+# What is Reconciliation ?
+Reconciliation is a process to compare and keep in sync the two files (Real and Virtual DOM). 
+Diffing algorithm is a technique of reconciliation which is used by React.
+
+# What is Component ? 
+ React applications are built using components:
+Components are independent and reusable pieces of code.
+Each component can maintain its own state and can receive data through props.
+Components can be either class-based (older) or function-based (modern with hooks).
+
+# Functional Component ?
+Functional components are simpler functions that take props and return React elements (usually JSX).
+Functional components can use hooks to manage state and side effects.
+Functional components are simpler and more straightforward compared to class components.
+Unlike class components, functional components don’t use this.
+
+# Functioanl components are stateless or statefull ?
+Initially, functional components were stateless, but with the introduction of React Hooks in React 16.8, they can now manage state and lifecycle logic.
+
+# Advantages of functional component ?
+Simpler Code: Syntax is simple.
+Performance: Performance is high as they don't involve complex lifecycle methods.
+Hooks Integration: Hooks allow functional components to handle state and side effects effectively.
+
+# What is a class component in React ?
+A class component is a JavaScript class that extends the React.Component
+class. It uses the render() method to dene the structure and appearance
+of a React component. Class components can have their own state and
+lifecycle methods.
+
+# What is the difference between functional and class components ?
+Functional components are simpler and easier to read and test compared to class components. 
+They don't have their own state or lifecycle methods.
+Class components, on the other hand, can manage their own state and have access to lifecycle methods
+such as componentDidMount() and componentDidUpdate().
+
+OR 
+
+Functional Components: Simpler, stateless components defined as functions. They use hooks for state and side effects.
+Class Components: More complex components with a render() method and lifecycle methods, used before hooks were introduced.
+
+# What is State in React ?
+State is a built-in object in React that holds component-specific data. 
+It represents the mutable values that can change over time.
+When the state of a component changes, React re-renders the component to reflect the updated data.
+
+#  What is props in React ?
+Props (short for properties) are used to pass data from a parent component to a child component. 
+Props are read-only and cannot be modied by the child component. 
+They are passed as attributes to the child component in JSX.
+
+# What is the difference between state and props ?
+State can be changed over time.
+Props are immutable.
+
+# What is the purpose of keys in React lists ?
+Keys are used in React lists to give each item a unique identier. 
+They help React identify which items have changed, been added, or been removed in a list, 
+improving performance and avoiding unnecessary re-rendering of components.
+
+# What are controlled components?
+Controlled components are form elements whose values are controlled by the React state.
+The state serves as the single source of truth, and any changes to the form elements are handled via state updates.
+
+# What are uncontrolled components?
+Uncontrolled components are form elements that maintain their own state. React accesses
+their current values using refs. This approach is closer to traditional form handling in HTML.
+
+# What is the difference between controlled and uncontrolled components in React ?
+In a controlled component, the value of the form elements is controlled by React. 
+The component's state is used to manage the value, and any changes to the value are handled by updating the state. 
+In an uncontrolled component, the value of the form elements is managed by the DOM itself, and React doesn't control or track the value
+
+#  What is conditional rendering in React ?
+Conditional rendering in React allows you to render different content or components based on certain conditions or state. 
+It enables dynamic rendering and helps in creating responsive and interactive UIs.
+
+# What are hooks in React ?
+React hooks are functions that allow functional components to use state, and other React features.
+Before hooks, state and lifecycle features were only available in class components. Hooks make functional components more powerful.
+Common hooks include useState, useEffect, useContext, useReducer, and useRef.
+
+#  What are the rules that must be followed while using React Hooks?
+There are 2 rules :
+1.React Hooks must be called only at the top level. It is not allowed to call them
+  inside the nested functions, loops, or conditions.
+2. It is allowed to call the Hooks only from the React Function Components
+
+# useState hook ?
+useState is a hook that allows us to add state to functional components.
+It enables your component to "remember" values between renders.
+It returns an array with two elements: first current state value and second function to update the state.
+
+#  useEffect() Hook ?
+The useEffect() Hook is used to perform side effects in functional components.
+It is used to perform operations like data fetching, subscriptions, or directly interacting with the DOM.
+The useEffect() Hook runs after every render by default.
+It can also return a cleanup function to clean up effects when the component unmounts or before it re-runs the effect.
+It replaces the lifecycle methods like componentDidMount(), componentDidUpdate(), and componentWillUnmount(). 
+
+# How does useEffect() work ?
+useEffect() takes two arguments:
+A callback function where the side effect logic resides.
+An optional dependency array to control when the effect runs.
+
+Without a dependency array --> Runs after every render.
+With an empty dependency array --> Runs only once, like componentDidMount.
+With specific dependencies --> Runs when the count value changes.
+
+# What is the useContext() hooks in React ?
+In React, useContext is a hook that allows you to access and consume values from a Context. 
+Context provides a way to share data between components without having to explicitly pass props through every level of the component tree.
+This is especially useful for managing global states like user authentication or theme settings.
+
+OR
+
+React Context is a way to manage and share data across different components in your application without using props-drilling.
+It is useful for global data like user authentication or theme settings, that needs to be accessible in multiple parts of your app.
+You create a context using React.createContext, 
+provide the context value using a Provider, 
+and then use a Consumer or the useContext hook to access that data.
+
+# What is the React Context API and when is it useful?
+The React Context API provides a way to share data across a component tree without manually passing props down through every level. 
+It is useful when you have data that needs to be accessed by multiple components at different levels in the component hierarchy.
+
+# What is Prop Drilling in React?
+Prop drilling refers to the practice of passing data (props) from a parent component down to deeply nested child components, 
+even if intermediate components do not need the data.
+
+
+
+
+
+
+
+
+
