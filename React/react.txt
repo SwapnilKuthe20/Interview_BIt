@@ -11,7 +11,7 @@ Where it does all the nessessary manipulating, before making the changes in the 
 
 # Why we use React js ?
  The main objective of react is to develop UI that improve speed of the apps.
-It uses virtual-dom which improve performance of the app. Virtual-DOM is faster than Reacl-DOM.
+It uses virtual-dom which improve performance of the app. Virtual-DOM is faster than Real-DOM.
 
 # What is a Single Page Application (SPA)?
  A Single Page Application is a web application that loads a single HTML page and
@@ -27,7 +27,7 @@ and place them in the DOM without using functions like appendChild() or createEl
 Behind the scenes, JSX gets transpiled into JavaScript using tools like Babel.
 
 #  What are React Fragments?
-React Fragments are a feature in React that allows you to group a list of children without adding extra nodes to the DOM.
+React Fragments allows us to group a list of children without adding extra nodes to the DOM.
 To prevent unnecessorily adding extra nodes to the DOM.
 
 # What is the Virtual DOM ?
@@ -38,8 +38,8 @@ After identifying the differences, only the necessary updates are applied to the
 (A new virtual DOM is created after every rerender).
 
 # What is real DOM ?
- The Real DOM is the actual Document Object Model, (a tree-structured representation of the UI elements in the browser). 
-The actual DOM provided by the browser. It directly represents the UI and is used to render content on the screen.
+ The Real DOM is the actual Document Object Model, (a tree like structure representation of the UI elements in the browser). 
+The actual DOM provided by the browser. It is used to render content on the screen.
 Whenever the UI needs to be updated, the Real DOM is directly manipulated, which can be slow because it requires re-rendering the entire DOM,
 which can lead to performance issue.
 
